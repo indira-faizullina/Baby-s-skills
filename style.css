@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  background-color: #f9f9f5;
+  max-width: 750px;
+  font-family: 'Roboto', sans-serif;
+}
+
+header {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 10px;
+}
+
+img {
+  width: 40%;
+  border: solid 3px #e0e6cd;
+  border-radius: 50%;
+  box-shadow: 4px 4px 15px #b5b4d1b7;
+  margin: 20px 0px 20px;
+}
+
+h1 {
+  color: #bc91b8;
+  text-align: center;
+  margin: 20px 0 20px;
+}
+
+section {
+  background-color: #e0e6cdcc;
+  margin: 10px 10px 20px;
+  padding: 10px;
+  border: solid 1px #b5b4d1;
+  border-radius: 20px;
+}
+
+table {
+  width: 100%;
+  text-align: center;
+}
+
+th {
+  color: #9a98c2;
+  font-size: 18px;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+
+td {
+  color: #a873a3;
+}
+
+form {
+  background-color: #e0cbc4cc;
+  margin: 10px 10px 20px;
+  padding: 20px;
+  color: rgb(47, 47, 66);
+  border: solid 1px #b5b4d1;
+  border-radius: 20px;
+}
+
+label {
+  color: #9a98c2;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+
+input,
+button {
+  background-color: #f9f9f5;
+  border: none;
+  border-radius: 10px;
+  margin-bottom: 4px;
+  margin-top: 5px;
+}
+
+input {
+  color: rgba(0, 0, 0, 0.65);
+  width: 100%;
+}
+
+.input_date {
+  width: 50%;
+}
+
+button {
+  cursor: pointer;
+  display: flex;
+  align-items: flex-end;
+  margin-left: auto;
+  padding: 5px 10px;
+  color: #bc91b8;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.error_window {
+  font-size: 13px;
+  color: red;
+}
