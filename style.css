@@ -103,3 +103,11 @@ button {
   font-size: 13px;
   color: red;
 }
+
+.delete-button {
+  align-items: flex-start;
+  margin: 4px 0;
+  padding: 0 5px 1px 5px;
+  font-size: 12px;
+  border-radius: 5px;
+}

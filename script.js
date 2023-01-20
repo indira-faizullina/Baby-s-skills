@@ -11,6 +11,8 @@ const skillsArr = [
   },
 ]
 
+// addEventListener to input
+
 const newSkillInputForm = document.querySelector('form')
 newSkillInputForm.addEventListener('submit', (event) => {
   event.preventDefault()
@@ -45,27 +47,33 @@ newSkillInputForm.addEventListener('submit', (event) => {
 
 // function to create a new item
 
-function addNewSkill(skill, date) {
+function addNewSkill(skill, date, id = Date.now().toString()) {
   const newItemSkillTd = document.createElement('td')
   newItemSkillTd.textContent = skill
 
   const newItemDateTd = document.createElement('td')
   newItemDateTd.textContent = date.split('-').reverse().join('.')
 
+  const newItemDeleteButtonTd = document.createElement('td')
+  const deleteButton = document.createElement('button')
+  deleteButton.className = 'delete-button'
+  deleteButton.textContent = '✖'
+  newItemDeleteButtonTd.append(deleteButton)
+
   const newItemTr = document.createElement('tr')
-  newItemTr.append(newItemDateTd, newItemSkillTd)
+  newItemTr.id = id
+  newItemTr.append(newItemDateTd, newItemSkillTd, newItemDeleteButtonTd)
 
   const table = document.querySelector('table')
   table.append(newItemTr)
 
   // to create a new array element
   const newElemOfSkillsArr = {
-    id: Date.now().toString(),
+    id: id,
     skillDate: date,
     skillName: skill,
   }
   skillsArr.push(newElemOfSkillsArr)
-  console.log(skillsArr)
 }
 
 // function to create a error window
@@ -78,3 +86,22 @@ const createErrorWindow = (text) => {
   const addItemButton = newSkillInputForm.querySelector('button')
   addItemButton.insertAdjacentElement('beforebegin', errorWindow)
 }
+
+// addEventListener to delete buttons
+
+const buttonToDeleteSkill = document.querySelector('.delete-button')
+const table = document.querySelector('table')
+table.addEventListener('click', (event) => {
+  const { target } = event
+  const targetIsDeleteButton = target.className.includes('delete-button')
+  if (targetIsDeleteButton) {
+    const skillToDelete = target.closest('tr')
+    skillToDelete.remove()
+
+    // to delete an array element
+    const indexToDelete = skillsArr.findIndex(
+      (skill) => skill.id === skillToDelete.id
+    )
+    skillsArr.splice(indexToDelete, 1)
+  }
+})
