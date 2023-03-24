@@ -8,38 +8,40 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header>
-      <img src="newborn.jpg" alt="photo of your baby" />
-      <h1>Умелки вашего ребенка</h1>
-    </header>
-    <section>
-      <table>
-        <tr>
-          <th>Дата</th>
-          <th>Навык</th>
-        </tr>
-        <tr id="1665474698659">
-          <td>05.01.2022</td>
-          <td>Первая улыбка</td>
-          <td><button class="delete-button">✖</button></td>
-        </tr>
-        <tr id="1665474725035">
-          <td>01.10.2022</td>
-          <td>Первые шаги</td>
-          <td><button class="delete-button">✖</button></td>
-        </tr>
-      </table>
-    </section>
-    <form>
-      <label for="new_skill">Новая умелка</label><br />
-      <input
-        type="text"
-        id="new_skill"
-        placeholder="введите новую умелку"
-      /><br />
-      <input type="date" class="input_date" /><br />
-      <button type="submit">Добавить</button>
-    </form>
-    <script src="script.js"></script>
+    <div class="container">
+      <header>
+        <img src="newborn.jpg" alt="photo of your baby" />
+        <h1>Умелки вашего ребёнка</h1>
+      </header>
+      <section>
+        <table>
+          <tr>
+            <th>Дата</th>
+            <th>Навык</th>
+          </tr>
+          <tr id="1665474698659">
+            <td>05.01.2022</td>
+            <td>Первая улыбка</td>
+            <td><button class="delete-button">✖</button></td>
+          </tr>
+          <tr id="1665474725035">
+            <td>01.10.2022</td>
+            <td>Первые шаги</td>
+            <td><button class="delete-button">✖</button></td>
+          </tr>
+        </table>
+      </section>
+      <form id="add-form">
+        <label for="new-skill">Новая умелка</label><br />
+        <input
+          type="text"
+          id="new-skill"
+          placeholder="введите новую умелку"
+        /><br />
+        <input type="date" class="input-date" /><br />
+        <button type="submit" class="submit-button">Добавить</button>
+      </form>
+    </div>
+    <script src="script2.js"></script>
   </body>
 </html>
